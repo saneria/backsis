@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ use App\Http\Controllers\AuthController;
 
 Route::post('/user',  [UserController::class, 'store'])->name('user.store');
 Route::post('/login', [AuthController::class, 'login'])->name('user.login');
+Route::post('/image', [ImageController::class, 'store']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout',[ AuthController::class, 'logout']);
