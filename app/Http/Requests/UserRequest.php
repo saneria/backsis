@@ -32,6 +32,7 @@ class UserRequest extends FormRequest
                 'name'      => 'required|string|max:255',
                 'email'     => 'required|string|email|unique:App\Models\User,email|max:255',
                 'password'  => 'required|min:8',
+                'role'      => 'required|string|max:255',
             ];
         }
         else if( request()->routeIs('user.update') ){
